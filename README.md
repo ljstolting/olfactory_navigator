@@ -4,7 +4,7 @@ This code instantiates an embodied agent inspired by smell-based navigation in m
     1. The agent does not have direct access to the concentration of the odorant in its vicinity, but this access is mediated by its sniffing behavior
     2. Sniffing behavior, which modulates the strength of the sensed signal, is (at least by default) independent of movement. 
 
-The environment is a two-dimensional grid, with the concentration of odorant at each point equal to the total concentration divided by the square of the distance (check on this)
+The environment is a two-dimensional grid, with the odor source always located at the origin and concentration of odorant at each point equal to the total concentration divided by the square of the distance from the source (check on this)
 
 The nervous system of the agent is modeled by a CTRNN with N neurons, one of which is an odorant sensor, one of which is a respiration effector, and two of which are motor effectors. This leaves N interneurons.
 In the "resp-odor" condition, the respiration effector is (reciprocally?) connected to the odorant sensor
@@ -13,7 +13,7 @@ In the "resp-odor_and_move" condition, the respiration effector is connected to 
 
 Movement effectors are 
 
-Sensors are inspired by
+Sensors are inspired by. Input to the sensor is equal to a parameter alpha times the concentration of odorant times relu(the rate of change of the respiratory neuron); it is reliably conveyed as long as the agent is breathing "in".
 
 *Relevant Files*
 CTRNN.cpp, CTRNN.h, random.h, random.cpp, VectorMatrix.h, FitnessEval.py
