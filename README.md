@@ -6,14 +6,17 @@ This code instantiates an embodied agent inspired by smell-based navigation in m
 
 The environment is a two-dimensional grid, with the concentration of odorant at each point equal to the total concentration divided by the square of the distance (check on this)
 
-The nervous system of the agent is modeled by a CTRNN with N neurons, one of which is an odorant concentraiton sensor, and two of which are motor effectors. This leaves N interneurons
+The nervous system of the agent is modeled by a CTRNN with N neurons, one of which is an odorant sensor, one of which is a respiration effector, and two of which are motor effectors. This leaves N interneurons.
+In the "resp-odor" condition, the respiration effector is (reciprocally?) connected to the odorant sensor
+In the "resp-move" condition, the respiration effector is connected to both movement effectors
+In the "resp-odor_and_move" condition, the respiration effector is connected to the odorant sensor as well as both movement effectors
 
 Movement effectors are 
 
 Sensors are inspired by
 
 *Relevant Files*
-
+CTRNN.cpp, CTRNN.h, random.h, random.cpp, VectorMatrix.h, FitnessEval.py
 **Evolution**
 *Summary*
 Evolutionary fitness is evaluated by 
@@ -21,9 +24,12 @@ Evolutionary fitness is evaluated by
     2. Average proximity to the source of the odorant throughout run
 
 Every agent is evaluated by placing it a close distance away from the odorant source facing it, a close distance away facing away, and a far distance away facing. Fitness is averaged across these three conditions and used to direct the activities of the algorithm.
-*Relevant Files*
 
+Genome structure is []
+*Relevant Files*
+random.cpp, random.h, TSearch.cpp, TSearch.h, VectorMatrix.h
 **Analysis**
 *Summary*
 
 *Relevant Files*
+AgentVisualization.ipynb, StatVisualization.ipynb
