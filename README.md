@@ -2,7 +2,7 @@
 *Summary*
 This code instantiates an embodied agent inspired by smell-based navigation in mammals (think blood-hounds, for example). The agent needs to maintain a respiratory rhythm while sampling odorants from its environment and navigating towards the source of the odorant. This is similar to the chemotaxer (Beer & Gallagher 1992) and models of C. elegans klinotaxis (Izquierdo & Beer, 2013) but different in several key ways
     1. The agent does not have direct access to the concentration of the odorant in its vicinity, but this access is mediated by its sniffing behavior
-    2. Sniffing behavior, which modulates the strength of the sensed signal, is (at least by default) independent of movement. 
+    2. Sniffing behavior, which modulates the strength of the sensed signal, can be controlled independently from movement. 
 
 The environment is a two-dimensional grid, with the odor source always located at the origin and concentration of odorant at each point equal to the total concentration divided by the square of the distance from the source (check on this)
 
@@ -13,7 +13,7 @@ In the "resp-odor_and_move" condition, the respiration effector is connected to 
 
 Movement effectors are 
 
-Sensors are inspired by. Input to the sensor is equal to a parameter alpha times the concentration of odorant times relu(the rate of change of the respiratory neuron); it is reliably conveyed as long as the agent is breathing "in".
+Sensors are inspired by ____. Input to the sensor is equal to a parameter alpha times the concentration of odorant times relu(the rate of change of the respiratory neuron); it is reliably conveyed as long as the agent is breathing "in".
 
 *Relevant Files*
 CTRNN.cpp, CTRNN.h, random.h, random.cpp, VectorMatrix.h, FitnessEval.py
